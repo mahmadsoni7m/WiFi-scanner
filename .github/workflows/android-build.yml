@@ -29,8 +29,11 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      # The runner already ships the Android SDK. Only accept the licences so Gradle can
+      # download the platform/build-tools it needs (the old setup-android action failed on
+      # the removed "tools" package).
+      - name: Accept Android SDK licences
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
 
       - name: Set up Gradle (with caching)
         uses: gradle/actions/setup-gradle@v4
