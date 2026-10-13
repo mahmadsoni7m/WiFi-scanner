@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ws_background">#FF070B1A</color>
+    <color name="ws_icon_background">#FF0A1230</color>
+    <color name="ws_icon_blue">#FF2E7BFF</color>
+    <color name="ws_icon_cyan">#FF00E5FF</color>
+</resources>
